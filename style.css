@@ -1,37 +1,22 @@
-/* PlyCount site. Fonts are self-hosted (SIL OFL); the site makes no third-party requests. */
+/* PlyCount site. One typeface, Bricolage Grotesque, self-hosted (SIL OFL); the site makes no third-party requests. */
 @font-face{font-family:"Bricolage Grotesque";src:url(assets/fonts/bricolage-grotesque-latin.woff2) format("woff2");font-weight:200 800;font-stretch:75% 100%;font-display:swap}
-@font-face{font-family:"Literata";src:url(assets/fonts/literata-latin.woff2) format("woff2");font-weight:200 900;font-display:swap}
 
 :root{
   --paper:#f6f8fc;--ink:#0f1a2e;--mut:#55617a;--rule:#d8dfeb;--tint:#e9eef8;
   --acc:rgb(10,118,242);
   --link:color-mix(in srgb,var(--acc) 72%,var(--ink));
   --head:"Bricolage Grotesque","Avenir Next",system-ui,sans-serif;
-  --body:"Literata",Charter,Georgia,serif;
+  --body:"Bricolage Grotesque","Avenir Next",system-ui,sans-serif;
   --gutter:clamp(1.25rem,5vw,3rem);
   --wide:68rem;
 }
 @media (prefers-color-scheme:dark){
   :root{--paper:#0b1220;--ink:#e8eef9;--mut:#9aa7c0;--rule:#26324a;--tint:#111b2f;--acc:rgb(46,110,200)}
 }
-/* The six colors the app offers (same values as its Settings > Appearance). */
-:root[data-accent=berry]{--acc:rgb(239,39,100)}
-:root[data-accent=amber]{--acc:rgb(213,108,0)}
-:root[data-accent=forest]{--acc:rgb(30,156,86)}
-:root[data-accent=teal]{--acc:rgb(0,151,162)}
-:root[data-accent=plum]{--acc:rgb(150,89,233)}
-@media (prefers-color-scheme:dark){
-  :root[data-accent=navy]{--acc:rgb(46,110,200)}
-  :root[data-accent=berry]{--acc:rgb(214,58,106)}
-  :root[data-accent=amber]{--acc:rgb(217,118,15)}
-  :root[data-accent=forest]{--acc:rgb(46,155,94)}
-  :root[data-accent=teal]{--acc:rgb(20,160,170)}
-  :root[data-accent=plum]{--acc:rgb(144,96,208)}
-}
 
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font:18px/1.65 var(--body);transition:background-color .2s}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 18px/1.6 var(--body);font-optical-sizing:auto;transition:background-color .2s}
 img{display:block;max-width:100%}
 a{color:var(--link);text-underline-offset:.18em;text-decoration-thickness:.08em}
 a:hover{text-decoration-thickness:.15em}
@@ -72,12 +57,6 @@ p,li,dd{margin:.6rem 0;max-width:62ch;text-wrap:pretty}
 .hero-icon{justify-self:start}
 .icon-wrap{width:clamp(11rem,52vw,19rem);aspect-ratio:1;border-radius:22.37%;overflow:hidden;box-shadow:0 2.2rem 4rem -1.6rem color-mix(in srgb,var(--acc) 55%,transparent),0 .4rem 1rem -.4rem rgb(0 0 0/.25);background:var(--acc)}
 .icon-wrap img{width:100%;height:100%}
-.icon-wrap.swap img{animation:pop .35s ease-out}
-@keyframes pop{from{transform:scale(1.06);opacity:.6}to{transform:none;opacity:1}}
-.swatches{display:flex;gap:.7rem;margin:1.6rem 0 0;padding:0;list-style:none}
-.swatches button{width:2.1rem;height:2.1rem;border-radius:50%;border:0;background:var(--c);cursor:pointer;padding:0;box-shadow:inset 0 0 0 1px rgb(0 0 0/.12)}
-.swatches button[aria-checked=true]{box-shadow:0 0 0 3px var(--paper),0 0 0 5px var(--ink)}
-.swatch-note{font-size:.92rem;color:var(--mut);margin:.8rem 0 0}
 @media (min-width:52rem){
   .hero{grid-template-columns:1.25fr 1fr}
   .hero-icon{justify-self:center}
@@ -110,7 +89,14 @@ dd{margin:.25rem 0 0;color:var(--ink)}
 .doc .meta{color:var(--mut);margin:.8rem 0 1.8rem;font-size:1rem}
 .doc h2{margin:2.6rem 0 .4rem;font-size:1.5rem}
 .doc h3{margin:1.7rem 0 .2rem}
-.doc .page-foot{display:none}
+.faq{border-top:1px solid var(--rule)}
+.faq:last-of-type{border-bottom:1px solid var(--rule)}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding:1rem 0;font:600 1.1rem/1.35 var(--head);letter-spacing:-.01em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:.6rem;height:.6rem;border-right:2px solid var(--acc);border-bottom:2px solid var(--acc);transform:translateY(-.15rem) rotate(45deg);transition:transform .15s}
+.faq[open] summary::after{transform:translateY(.1rem) rotate(-135deg)}
+.faq summary:hover{color:var(--link)}
+.faq p{margin:0 0 1.1rem}
 
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-@media print{.top nav,.swatches,.swatch-note{display:none}body{background:#fff;color:#000}}
+@media print{.top nav{display:none}body{background:#fff;color:#000}}
