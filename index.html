@@ -1,13 +1,86 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PlyCount</title><meta name="description" content="PlyCount is an iPhone app for browsing and managing your Ravelry library, projects, stash and queue.">
-<link rel="stylesheet" href="style.css"></head><body>
-<nav><a href="/">PlyCount</a><a href="/support.html">Support</a><a href="/privacy.html">Privacy Policy</a></nav>
-<main>
-<h1>PlyCount</h1>
-<p class="meta">An independent iPhone app for Ravelry.</p>
-<p>PlyCount lets you search patterns, yarns, designers, people and projects, keep your library, stash, queue, favorites and projects up to date, read your pattern PDFs, save your searches, take part in Ravelry's forums and see your friends' recent activity, all with your own Ravelry account.</p>
-<p>The app is free, has no ads, and does not track you.</p>
-<p><a href="/support.html">Get help</a> &middot; <a href="/privacy.html">Read the privacy policy</a></p>
-<footer>PlyCount is an independent app. It is not made, provided, endorsed or affiliated with Ravelry, and is a separate service from Ravelry. Ravelry has its own terms and privacy policy.</footer>
-</main></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PlyCount: A Ravelry Companion for iPhone</title>
+<meta name="description" content="PlyCount is a free, ad-free iPhone app for browsing and managing your Ravelry library, projects, stash and queue. Independent of Ravelry. Coming soon to the App Store.">
+<link rel="canonical" href="https://plycount.app/">
+<meta name="theme-color" content="#0a76f2">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PlyCount: A Ravelry Companion">
+<meta property="og:description" content="A free, ad-free iPhone app for your Ravelry library, projects, stash and queue. Coming soon to the App Store.">
+<meta property="og:url" content="https://plycount.app/">
+<meta property="og:image" content="https://plycount.app/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script>try{var a=localStorage.getItem("plycount.accent");if(/^(navy|berry|amber|forest|teal|plum)$/.test(a))document.documentElement.setAttribute("data-accent",a)}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="/"><img src="assets/icons/navy-128.webp" alt="" width="34" height="34">PlyCount</a>
+  <nav aria-label="Site">
+    <a href="/support.html">Support</a>
+    <a href="/privacy.html">Privacy Policy</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="hero-text">
+      <h1>A Ravelry companion for your iPhone</h1>
+      <p class="lead">Search patterns and yarns, keep your library, stash and queue up to date, and read your pattern PDFs. All with your own Ravelry account.</p>
+      <p class="store" aria-disabled="true">Coming soon to the App Store</p>
+      <p class="fine">Free, with no ads and no tracking. For iPhone with iOS 17 or later.</p>
+    </div>
+    <div class="hero-icon">
+      <div class="icon-wrap"><img id="app-icon" src="assets/icons/navy.webp" alt="The PlyCount app icon: a ball of yarn drawn as white stripes on a colored square" width="640" height="640"></div>
+      <ul class="swatches" id="swatches" role="radiogroup" aria-label="App icon color" hidden></ul>
+      <p class="swatch-note" id="swatch-note" hidden>PlyCount comes in six colors. Pick one.</p>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="does">
+    <div class="ledger">
+      <h2 id="does">What it does</h2>
+      <dl>
+        <div class="row"><dt>Search Ravelry</dt><dd>Search patterns, yarns, designers, people and projects.</dd></div>
+        <div class="row"><dt>Library and stash</dt><dd>Keep your library and your stash up to date from your phone.</dd></div>
+        <div class="row"><dt>Queue, favorites and projects</dt><dd>Add to your queue, save favorites, and update your projects while you work.</dd></div>
+        <div class="row"><dt>Pattern PDFs</dt><dd>Read your pattern PDFs in the app. Your notes and highlights stay on your device.</dd></div>
+        <div class="row"><dt>Saved searches</dt><dd>Save a search once and run it again whenever you like.</dd></div>
+        <div class="row"><dt>Forums and friends</dt><dd>Take part in Ravelry's forums and see what your friends have been up to.</dd></div>
+        <div class="row"><dt>Yarn shops near you</dt><dd>Find local yarn shops, using your location only while the app is open and only if you ask.</dd></div>
+        <div class="row"><dt>Yours to set up</dt><dd>Light, dark or automatic appearance, and six colors for the app and its icon.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="indep" aria-labelledby="indep">
+    <div class="indep-in">
+      <h2 id="indep">PlyCount is independent of Ravelry</h2>
+      <p>PlyCount is an independent app. It is not made, provided, endorsed or affiliated with Ravelry, and is a separate service from Ravelry. Ravelry has its own terms and privacy policy.</p>
+      <p>You sign in on Ravelry's own page, so PlyCount never sees your Ravelry password. PlyCount runs no server that receives your data, and it does not track you. Read the <a href="/privacy.html">privacy policy</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div>
+      <p><strong>PlyCount</strong>, by Jamie Tippett<br>&copy; 2026 Jamie Tippett</p>
+    </div>
+    <div>
+      <p class="links"><a href="/support.html">Support</a> <a href="/privacy.html">Privacy Policy</a> <a href="mailto:info@plycount.app">info@plycount.app</a></p>
+      <p>PlyCount is an independent app. It is not made, provided, endorsed or affiliated with Ravelry, and is a separate service from Ravelry.</p>
+    </div>
+  </div>
+</footer>
+<script src="site.js" defer></script>
+</body>
+</html>
