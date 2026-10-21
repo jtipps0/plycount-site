@@ -1,13 +1,116 @@
-:root{--bg:#fbfaf8;--fg:#23201d;--mut:#6b655e;--line:#e3ded7;--acc:#6a3fa0}
-@media (prefers-color-scheme:dark){:root{--bg:#171518;--fg:#ece8e4;--mut:#a39d96;--line:#37333a;--acc:#bda2e8}}
+/* PlyCount site. Fonts are self-hosted (SIL OFL); the site makes no third-party requests. */
+@font-face{font-family:"Bricolage Grotesque";src:url(assets/fonts/bricolage-grotesque-latin.woff2) format("woff2");font-weight:200 800;font-stretch:75% 100%;font-display:swap}
+@font-face{font-family:"Literata";src:url(assets/fonts/literata-latin.woff2) format("woff2");font-weight:200 900;font-display:swap}
+
+:root{
+  --paper:#f6f8fc;--ink:#0f1a2e;--mut:#55617a;--rule:#d8dfeb;--tint:#e9eef8;
+  --acc:rgb(10,118,242);
+  --link:color-mix(in srgb,var(--acc) 72%,var(--ink));
+  --head:"Bricolage Grotesque","Avenir Next",system-ui,sans-serif;
+  --body:"Literata",Charter,Georgia,serif;
+  --gutter:clamp(1.25rem,5vw,3rem);
+  --wide:68rem;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#0b1220;--ink:#e8eef9;--mut:#9aa7c0;--rule:#26324a;--tint:#111b2f;--acc:rgb(46,110,200)}
+}
+/* The six colors the app offers (same values as its Settings > Appearance). */
+:root[data-accent=berry]{--acc:rgb(239,39,100)}
+:root[data-accent=amber]{--acc:rgb(213,108,0)}
+:root[data-accent=forest]{--acc:rgb(30,156,86)}
+:root[data-accent=teal]{--acc:rgb(0,151,162)}
+:root[data-accent=plum]{--acc:rgb(150,89,233)}
+@media (prefers-color-scheme:dark){
+  :root[data-accent=navy]{--acc:rgb(46,110,200)}
+  :root[data-accent=berry]{--acc:rgb(214,58,106)}
+  :root[data-accent=amber]{--acc:rgb(217,118,15)}
+  :root[data-accent=forest]{--acc:rgb(46,155,94)}
+  :root[data-accent=teal]{--acc:rgb(20,160,170)}
+  :root[data-accent=plum]{--acc:rgb(144,96,208)}
+}
+
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
-main{max-width:42rem;margin:0 auto;padding:2rem 1.25rem 4rem}
-h1{font-size:2rem;line-height:1.2;margin:0 0 .25rem}
-h2{font-size:1.2rem;margin:2.2rem 0 .4rem}
-p,li{margin:.5rem 0}
-.meta{color:var(--mut);margin:0 0 1.5rem}
-a{color:var(--acc)}
-nav{display:flex;gap:1.25rem;flex-wrap:wrap;padding:1rem 1.25rem;border-bottom:1px solid var(--line);max-width:42rem;margin:0 auto}
-nav a{text-decoration:none;font-weight:600}
-footer{color:var(--mut);font-size:.9rem;border-top:1px solid var(--line);padding-top:1rem;margin-top:3rem}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:18px/1.65 var(--body);transition:background-color .2s}
+img{display:block;max-width:100%}
+a{color:var(--link);text-underline-offset:.18em;text-decoration-thickness:.08em}
+a:hover{text-decoration-thickness:.15em}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--paper);padding:.5rem .9rem;z-index:10}
+.skip:focus{left:var(--gutter);top:.5rem}
+
+h1,h2,h3{font-family:var(--head);font-weight:700;letter-spacing:-.015em;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.5rem,1.4rem + 5.2vw,4.6rem);line-height:1.02;letter-spacing:-.03em;font-variation-settings:"opsz" 96}
+h2{font-size:clamp(1.5rem,1.2rem + 1.4vw,2.1rem);line-height:1.15}
+h3{font-size:1.1rem;line-height:1.3}
+p,li,dd{margin:.6rem 0;max-width:62ch;text-wrap:pretty}
+
+/* Header and footer */
+.top{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;max-width:var(--wide);margin:0 auto;padding:1.1rem var(--gutter)}
+.brand{display:flex;align-items:center;gap:.65rem;color:var(--ink);text-decoration:none;font:700 1.3rem/1 var(--head);letter-spacing:-.02em}
+.brand img{width:34px;height:34px;border-radius:22.37%}
+.top nav{display:flex;gap:1.5rem}
+.top nav a{font:600 1rem/1 var(--head);color:var(--ink);text-decoration:none;padding:.5rem 0;border-bottom:2px solid transparent}
+.top nav a:hover,.top nav a[aria-current=page]{border-bottom-color:var(--acc)}
+
+.foot{border-top:1px solid var(--rule);margin-top:5rem}
+.foot-in{max-width:var(--wide);margin:0 auto;padding:2rem var(--gutter) 3rem;display:grid;gap:1.5rem 3rem;grid-template-columns:1fr}
+.foot p{font-size:.92rem;line-height:1.55;color:var(--mut);margin:0 0 .5rem}
+.foot .links{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font:600 .98rem/1.4 var(--head)}
+.foot .links a{color:var(--ink)}
+@media (min-width:56rem){.foot-in{grid-template-columns:1fr 1.4fr}}
+
+/* Home: hero */
+.hero{max-width:var(--wide);margin:0 auto;padding:clamp(1.5rem,5vw,4rem) var(--gutter) 0;display:grid;gap:2.5rem 4rem;grid-template-columns:1fr;align-items:center}
+.lead{font-size:clamp(1.15rem,1.05rem + .5vw,1.35rem);line-height:1.55;margin:1.4rem 0 0;max-width:34em}
+.store{display:inline-block;margin:1.75rem 0 0;padding:.85rem 1.4rem;border:2px solid var(--ink);border-radius:999px;font:600 1.05rem/1.2 var(--head);color:var(--ink)}
+/* When the app is live, replace the .store span with: <a class="store live" href="APP STORE URL">...</a>
+   (use Apple's official "Download on the App Store" badge artwork there instead). */
+.store.live{background:var(--ink);color:var(--paper);text-decoration:none}
+.store.live:hover{background:var(--acc);border-color:var(--acc);color:#fff}
+.fine{font-size:.95rem;color:var(--mut);margin:.9rem 0 0}
+.hero-icon{justify-self:start}
+.icon-wrap{width:clamp(11rem,52vw,19rem);aspect-ratio:1;border-radius:22.37%;overflow:hidden;box-shadow:0 2.2rem 4rem -1.6rem color-mix(in srgb,var(--acc) 55%,transparent),0 .4rem 1rem -.4rem rgb(0 0 0/.25);background:var(--acc)}
+.icon-wrap img{width:100%;height:100%}
+.icon-wrap.swap img{animation:pop .35s ease-out}
+@keyframes pop{from{transform:scale(1.06);opacity:.6}to{transform:none;opacity:1}}
+.swatches{display:flex;gap:.7rem;margin:1.6rem 0 0;padding:0;list-style:none}
+.swatches button{width:2.1rem;height:2.1rem;border-radius:50%;border:0;background:var(--c);cursor:pointer;padding:0;box-shadow:inset 0 0 0 1px rgb(0 0 0/.12)}
+.swatches button[aria-checked=true]{box-shadow:0 0 0 3px var(--paper),0 0 0 5px var(--ink)}
+.swatch-note{font-size:.92rem;color:var(--mut);margin:.8rem 0 0}
+@media (min-width:52rem){
+  .hero{grid-template-columns:1.25fr 1fr}
+  .hero-icon{justify-self:center}
+}
+
+/* Home: what it does */
+.band{max-width:var(--wide);margin:0 auto;padding:clamp(3.5rem,8vw,6rem) var(--gutter) 0}
+.ledger{display:grid;gap:1.5rem 4rem;grid-template-columns:1fr}
+.ledger>h2{align-self:start}
+dl{margin:0}
+.row{border-top:1px solid var(--rule);padding:1.1rem 0 1.15rem}
+.row:last-child{border-bottom:1px solid var(--rule)}
+dt{font:700 1.15rem/1.3 var(--head);letter-spacing:-.01em}
+dd{margin:.25rem 0 0;color:var(--ink)}
+@media (min-width:52rem){
+  .ledger{grid-template-columns:1fr 1.7fr}
+  .ledger>h2{position:sticky;top:1.5rem}
+}
+
+/* Home: independence statement */
+.indep{max-width:var(--wide);margin:clamp(3.5rem,8vw,6rem) auto 0;padding:0 var(--gutter)}
+.indep-in{background:var(--tint);border-left:6px solid var(--acc);border-radius:0 1rem 1rem 0;padding:clamp(1.5rem,4vw,2.75rem)}
+.indep h2{margin-bottom:.9rem}
+.indep p{font-size:1.1rem}
+.indep .small{font-size:.98rem;color:var(--mut)}
+
+/* Interior pages (support, privacy, 404) */
+.doc{max-width:44rem;margin:0 auto;padding:clamp(1.5rem,5vw,3.5rem) var(--gutter) 0}
+.doc h1{font-size:clamp(2.1rem,1.5rem + 3vw,3.2rem)}
+.doc .meta{color:var(--mut);margin:.8rem 0 1.8rem;font-size:1rem}
+.doc h2{margin:2.6rem 0 .4rem;font-size:1.5rem}
+.doc h3{margin:1.7rem 0 .2rem}
+.doc .page-foot{display:none}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media print{.top nav,.swatches,.swatch-note{display:none}body{background:#fff;color:#000}}
