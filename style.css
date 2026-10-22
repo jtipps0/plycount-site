@@ -33,7 +33,7 @@ p,li,dd{margin:.6rem 0;max-width:62ch;text-wrap:pretty}
 
 /* Header and footer */
 .top{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;max-width:var(--wide);margin:0 auto;padding:1.1rem var(--gutter)}
-.brand{display:flex;align-items:center;gap:.65rem;color:var(--ink);text-decoration:none;font:800 1.3rem/1 var(--head);letter-spacing:-.02em}
+.brand{display:flex;align-items:center;gap:.65rem;color:var(--ink);text-decoration:none;font:700 1.3rem/1 var(--head);letter-spacing:-.02em}
 .brand img{width:34px;height:34px;border-radius:22.37%}
 .top nav{display:flex;gap:1.5rem}
 .top nav a{font:600 1rem/1 var(--head);color:var(--ink);text-decoration:none;padding:.5rem 0;border-bottom:2px solid transparent}
