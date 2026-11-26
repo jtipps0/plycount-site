@@ -5,6 +5,8 @@
 :root{
   --paper:#f6f8fc;--ink:#0f1a2e;--mut:#55617a;--rule:#d8dfeb;--tint:#e9eef8;
   --acc:rgb(10,118,242);
+  /* Light mode: a long, slow fade from white to a light blue, with a soft blue glow behind the hero phone. */
+  --art:radial-gradient(circle 34rem at 78% 22rem,rgb(10 118 242/.15),transparent 70%),linear-gradient(180deg,#fff 0,#f1f6ff 32%,#dce9fc 100%);
   --link:color-mix(in srgb,var(--acc) 72%,var(--ink));
   --head:"Bricolage Grotesque","Avenir Next",system-ui,sans-serif;
   --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -12,12 +14,12 @@
   --wide:68rem;
 }
 @media (prefers-color-scheme:dark){
-  :root{--paper:#0b1220;--ink:#e8eef9;--mut:#9aa7c0;--rule:#26324a;--tint:#111b2f;--acc:rgb(46,110,200)}
+  :root{--paper:#0b1220;--ink:#e8eef9;--mut:#9aa7c0;--rule:#26324a;--tint:#111b2f;--acc:rgb(46,110,200);--art:none}
 }
 
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.65 var(--body);transition:background-color .2s}
+body{margin:0;background-color:var(--paper);background-image:var(--art);background-repeat:no-repeat;color:var(--ink);font:400 17px/1.65 var(--body);transition:background-color .2s}
 img{display:block;max-width:100%}
 a{color:var(--link);text-underline-offset:.18em;text-decoration-thickness:.08em}
 a:hover{text-decoration-thickness:.15em}
