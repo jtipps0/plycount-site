@@ -63,6 +63,15 @@ p,li,dd{margin:.6rem 0;max-width:62ch;text-wrap:pretty}
   .hero-icon{justify-self:center}
 }
 
+/* Home: screenshots (beta images carry a "Beta" note; replace after launch) */
+.looks{max-width:var(--wide);margin:0 auto;padding:clamp(3rem,7vw,5rem) var(--gutter) 0}
+.looks .note{color:var(--mut);margin:.5rem 0 0}
+.shots{display:flex;gap:1.1rem;overflow-x:auto;scroll-snap-type:x proximity;list-style:none;margin:1.5rem calc(var(--gutter)*-1) 0;padding:.5rem var(--gutter) 1.25rem;scroll-padding:0 var(--gutter)}
+.shots li{flex:0 0 clamp(11.5rem,62vw,15rem);scroll-snap-align:start;margin:0;max-width:none}
+.shots figure{margin:0}
+.shots img{width:100%;height:auto;aspect-ratio:660/1434;border-radius:1.6rem;border:1px solid var(--rule);box-shadow:0 1rem 2rem -1rem rgb(0 0 0/.35);background:var(--tint)}
+.shots figcaption{font:600 .95rem/1.35 var(--head);margin:.7rem .2rem 0}
+
 /* Home: what it does */
 .band{max-width:var(--wide);margin:0 auto;padding:clamp(3.5rem,8vw,6rem) var(--gutter) 0}
 .ledger{display:grid;gap:1.5rem 4rem;grid-template-columns:1fr}
