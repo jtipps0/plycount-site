@@ -57,7 +57,7 @@ p,li,dd{margin:.6rem 0;max-width:62ch;text-wrap:pretty}
 /* When the app is live, replace the .store span with: <a class="store live" href="APP STORE URL">...</a>
    (use Apple's official "Download on the App Store" badge artwork there instead). */
 .store.live{background:var(--ink);color:var(--paper);text-decoration:none}
-.store.live:hover{background:var(--acc);border-color:var(--acc);color:#fff}
+.store.live:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 /* Join the Beta: outlined on devices with a mouse (fills on hover), filled on touch screens. */
 .store.live{transition:background-color .15s,border-color .15s,color .15s}
 @media (hover:hover) and (pointer:fine){.store.live{background:transparent;color:var(--ink)}}
