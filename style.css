@@ -79,6 +79,9 @@ p,li,dd{margin:.6rem 0;max-width:62ch;text-wrap:pretty}
 .shots figcaption{font:600 .95rem/1.35 var(--head);margin:.7rem .2rem 0}
 
 /* Home: what it does */
+.mark-bg{position:relative;overflow:clip}
+.mark-bg::before{content:"";position:absolute;width:min(46rem,120vw);aspect-ratio:1;right:-12rem;top:50%;transform:translateY(-50%);background:var(--mark-ink);opacity:var(--mark-op);-webkit-mask:url(assets/mark.webp) center/contain no-repeat;mask:url(assets/mark.webp) center/contain no-repeat;pointer-events:none}
+.mark-bg>*{position:relative}
 .band{max-width:var(--wide);margin:0 auto;padding:clamp(3.5rem,8vw,6rem) var(--gutter) 0}
 .ledger{display:grid;gap:1.5rem 4rem;grid-template-columns:1fr}
 .ledger>h2{align-self:start}
