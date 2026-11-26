@@ -58,9 +58,11 @@ p,li,dd{margin:.6rem 0;max-width:62ch;text-wrap:pretty}
 .hero-icon{justify-self:start}
 .icon-wrap{width:clamp(11rem,52vw,19rem);aspect-ratio:1;border-radius:22.37%;overflow:hidden;box-shadow:0 2.2rem 4rem -1.6rem color-mix(in srgb,var(--acc) 55%,transparent),0 .4rem 1rem -.4rem rgb(0 0 0/.25);background:var(--acc)}
 .icon-wrap img{width:100%;height:100%}
+.hero-shot{justify-self:start;width:clamp(12rem,56vw,16.5rem)}
+.hero-shot img{width:100%;height:auto;aspect-ratio:660/1434;border-radius:1.9rem;border:1px solid var(--rule);background:var(--tint);box-shadow:0 2.2rem 4rem -1.6rem color-mix(in srgb,var(--acc) 55%,transparent),0 .4rem 1rem -.4rem rgb(0 0 0/.25)}
 @media (min-width:52rem){
   .hero{grid-template-columns:1.25fr 1fr}
-  .hero-icon{justify-self:center}
+  .hero-icon,.hero-shot{justify-self:center}
 }
 
 /* Home: screenshots (beta images carry a "Beta" note; replace after launch) */
